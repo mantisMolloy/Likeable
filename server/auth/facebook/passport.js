@@ -37,9 +37,6 @@ exports.setup = function (User, config) {
             last25 = lastLikes;
           });
 
-
-          console.log(last25);
-
           if (user === null) {
             user = new User({
               name: profile.name.familyName,
