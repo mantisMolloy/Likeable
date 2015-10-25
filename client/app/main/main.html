@@ -1,0 +1,85 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>Are You Likeable?</h1>
+    <p class="lead">Whats your liking ratio?</p>
+  </div>
+</header>
+
+<div class="container">
+
+<div class="row" ng-show="!logged()">
+  <hr>
+    <div class="col-xs-12 text-center">
+      <a class="btn btn-facebook" href="" ng-click="loginOauth('facebook')">
+        <i class="fa fa-facebook"></i> Connect with Facebook and find out
+      </a>
+      <hr>
+    </div>
+</div>
+
+<div class="row" ng-show="logged()">
+  <hr>
+  <div class="col-xs-12 text-center">
+      <h2>{{ user.name }} you have {{ user.liker }}.</h2>
+  </div>
+</div>
+
+
+<!-- TODO write directive for these 2 row divs As they are similiar-->
+<div class="row" ng-show="logged() && user.detected.length==0">
+  <hr>
+  <div class="co-xs-12 text-center">
+    <p>Congratulations {{ user.name }} you are awesome. We did not detect any traces of Kardashian or Bieber in your likes.</p>
+  </div>
+</div>
+
+<div class="row" ng-show="logged() && user.detected.length>0">
+  <hr>
+  <div class="co-xs-12 text-center">
+    <p>Unfortunately we detected traces of Kardashian or Bieber in your likes. Sorry {{ user.name }} you are not awesome.</p>
+  </div>
+</div>
+
+<!-- TODO write directive for these 2 row divs As they are similiar-->
+<div class="row" ng-show="logged() && user.detected.length>0">
+  <hr>
+  <div class="col-xs-12 text-center">
+    <h1>Detected Dubious Likes</h1>
+    <br>
+  </div>
+  <div  class="col-xs-12 col-md-4 col-lg-3 text-center" ng-repeat="page in user.detected">
+    <div class="thumbnail">
+      <img src="http://graph.facebook.com/{{ page.id }}/picture" alt="{{ page.name}} profile">
+      <div class="caption">
+        <h3>{{ page.name }}</h3>
+        <p>You liked this page on:</p>
+        <p ng-bind="page.created_time | date:'MM/dd/yyyy'">{{ page.created_time }}</p>
+        <p><a href="#" class="btn btn-default" role="button">Vist Page</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" ng-show="logged()">
+  <hr>
+  <div class="col-xs-12 text-center">
+    <h1>Last 25 Likes</h1>
+    <br>
+  </div>
+  <div  class="col-xs-12 col-md-4 col-lg-3 text-center" ng-repeat="page in user.last">
+    <div class="thumbnail">
+      <img src="http://graph.facebook.com/{{ page.id }}/picture" alt="{{ page.name}} profile">
+      <div class="caption">
+        <h3>{{ page.name }}</h3>
+        <p>You liked this page on:</p>
+        <p ng-bind="page.created_time | date:'MM/dd/yyyy'">{{ page.created_time }}</p>
+        <p></p>
+        <p><a href="http://facebook.com/{{ page.id }}" class="btn btn-default" role="button">Vist Page</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
