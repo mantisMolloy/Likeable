@@ -3,7 +3,7 @@ MEAN stack app which determines how many facebook pages you have liked and scans
 
 ##Before logging in
 
-![Alt text](client/assets/images/loggedout.png?raw=true "logged out")
+![Alt text](Likeable/client/assets/images/loggedout.png?raw=true "logged out")
 
 ##After Logging in
 
