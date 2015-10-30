@@ -1,5 +1,5 @@
 # Likeable
-MEAN stack app which determines how many facebook pages you have liked and scans for traces of Kardashian and Bieber in the users likes. User log into the app using an oAuth2.0 strategy and information about users page likes are gathered via Facebook API.
+MEAN stack app which determines how many facebook pages you have liked and scans for traces of Kardashian and Bieber in the your likes. Users log into the app using an oAuth2.0 strategy and information about users page likes are gathered via Facebook Graph API.
 
 ##Before logging in
 
