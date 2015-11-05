@@ -14,4 +14,4 @@ After logging in the user will see their liking ratio. The app will detect trace
 #Usage
 You will need a facebook app-id and secret and then place them in server/config/local.env.js as per the example file located in the same directory. In your facebook app you will need to set the address as http://localhost:9000 if running locally.
 
-You will also need and instace of MongoDB running, MongoDB uri is configured in server/config/enviornment.
+You will also need an instance of MongoDB running, MongoDB uri is configured in server/config/enviornment.
